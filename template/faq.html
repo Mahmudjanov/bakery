@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="faq-main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mb-5">
+                    <div class="frequently-area">
+                        <h2 class="heading mb-0">General Question</h2>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="frequently-item">
+                                            <ul>
+                                                {% for i in faq %}
+                                                <li class="has-sub active">
+                                                    <a href="javascript:void(0)">{{i.question}}
+                                                        <i class="pe-7s-angle-down"></i>
+                                                    </a>
+                                                    <ul class="frequently-body">
+                                                        <li>{{i.answer}}</li>
+                                                    </ul>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

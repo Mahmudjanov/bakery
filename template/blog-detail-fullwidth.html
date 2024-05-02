@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="blog_details_section">
+        <div class="container">
+            <div class="row">
+                <div class="offset-lg-2 col-lg-8">
+                    <div class="blog_details_left">
+                        <div class="blog_sticky_thumb">
+                            <img src="{{blog.photo.url}}" alt="">
+                        </div>
+                        <div class="blog_details_content ">
+                            <span class="brakery">{{blog.name}}</span>
+                            <div class="blog_details_title">
+                                <h2>{{blog.short_description}}</h2>
+                            </div>
+                            
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

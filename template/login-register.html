@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="login-register-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <form action="{% url 'login-register' %}" method="post">
+                        {% csrf_token %}
+                        <div class="login-form">
+                            <h4 class="login-title">Login</h4>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label>Username*</label>
+                                    <input type="text" name="username" placeholder="Email Address">
+                                </div>
+                                <div class="col-lg-12">
+                                    <label>Password</label>
+                                    <input type="password" name="password" placeholder="Password">
+                                </div>
+                                <div class="col-lg-12 pt-5">
+                                    <button class="btn custom-btn md-size">Login</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6 pt-5 pt-lg-0">
+                    <form action="{% url 'register' %}"method="post">
+                        {% csrf_token %}
+                        <div class="login-form">
+                            <h4 class="login-title">Register</h4>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Username*</label>
+                                    <input type="text" name="username" placeholder="Email Address">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Password</label>
+                                    <input type="password" name="password" placeholder="Password">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Confirm Password</label>
+                                    <input type="password" name="confirm" placeholder="Confirm Password">
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn custom-btn md-size">Register</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

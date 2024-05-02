@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="wishlist-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="#">
+                        <div class="table-content table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="product_remove">remove</th>
+                                        <th class="product-thumbnail">images</th>
+                                        <th class="cart-product-name">Product</th>
+                                        <th class="product-price">Unit Price</th>
+                                        <th class="cart_btn">add to cart</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in product %}
+                                    <tr>
+                                        <td class="product_remove">
+                                            <a href="{% url 'remove-wishlist' i.id %}">
+                                                <i class="pe-7s-close" title="Remove"></i>
+                                            </a>
+                                        </td>
+                                        <td class="product-thumbnail">
+                                            <a href="#">
+                                                <img style="width: 100px!important; height: 70px!important;" src="{{ i.product.photo.first.photo.url }}"
+                                                    alt="Wishlist Thumbnail">
+                                            </a>
+                                        </td>
+                                        <td class="product-name"><a href="#">{{ i.product.name }}</a></td>
+                                        <td class="price"><span class="amount">${{ i.product.price }}</span></td>
+                                        <td class="cart_btn"><a href="{% url 'add-card' i.product.id %}">add to cart</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
